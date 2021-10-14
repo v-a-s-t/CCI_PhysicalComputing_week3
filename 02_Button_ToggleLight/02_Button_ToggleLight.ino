@@ -18,7 +18,7 @@ void loop() {
 
   // If we have a new button value, let's flip the LED's state.
   // From on to off, or from off to on.
-  if (buttonValue == LOW && buttonValue != prevButtonValue) {
+  if (buttonValue == HIGH && buttonValue != prevButtonValue) {
     ledState = !ledState;
     digitalWrite(LEDPIN, ledState);
   }

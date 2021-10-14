@@ -2,8 +2,6 @@
 #define BUTTONPIN 5
 
 int buttonValue;
-int prevButtonValue;
-int ledState;
 
 void setup() {
   // Sets the LED pin to be an output
@@ -16,15 +14,8 @@ void loop() {
   // Read button input
   buttonValue = digitalRead(BUTTONPIN);
 
-  // If we have a new button value, let's flip the LED's state.
-  // From on to off, or from off to on.
-  if (buttonValue == LOW && buttonValue != prevButtonValue) {
-    ledState = !ledState;
-    digitalWrite(LEDPIN, ledState);
-  }
-
-  // Let's save the button value
-  prevButtonValue = buttonValue;
+  // Set LED state as button value
+  digitalWrite(LEDPIN, buttonValue);
 
   // Add a little delay for debouncing the button
   delay(10);

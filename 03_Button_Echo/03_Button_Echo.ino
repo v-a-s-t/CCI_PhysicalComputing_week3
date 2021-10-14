@@ -22,7 +22,7 @@ void loop() {
   buttonValue = digitalRead(BUTTONPIN);
 
   // If we have a new button press, add 1 to our number of clicks.
-  if (buttonValue == LOW && buttonValue != prevButtonValue) {
+  if (buttonValue == HIGH && buttonValue != prevButtonValue) {
     // Store when the button was pressed.
     lastClick = millis();
     // Add 1 to number of clicks.
